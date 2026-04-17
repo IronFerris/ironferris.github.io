@@ -14,6 +14,14 @@ function preload() {
   bgimg = loadImage('https://ironferris.github.io/images/bliss.png');
   img = loadImage('https://ironferris.github.io/images/fatteto.png');
   img2 = loadImage('https://ironferris.github.io/images/mozylong.png');
+  img3 = loadImage('https://ironferris.github.io/images/gorb.png');
+  img4 = loadImage('https://ironferris.github.io/images/clov.png');
+  img5 = loadImage('https://ironferris.github.io/images/stage.png');
+  img6 = loadImage('https://ironferris.github.io/images/mic.png');
+  img7 = loadImage('https://ironferris.github.io/images/bass.png');
+  img8 = loadImage('https://ironferris.github.io/images/drums.png');
+  img9 = loadImage('https://ironferris.github.io/images/guitar.png');
+  img10 = loadImage('https://ironferris.github.io/images/crowd.png');
 }
 
 function setup() {
@@ -55,42 +63,30 @@ if (toolChoice == '1') { // g places the image we pre-loaded
   } else if (toolChoice == '2') { // g places the image we pre-loaded
     image(img2, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 50 + brushSize, 116 + (brushSize*2));
     
-  } else if (toolChoice == '3') { // third tool
-
-    stroke(300, 100, 0, 80);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-    stroke('black')
-  } else if (toolChoice == '4') {
-
-    stroke(0, 0, 255);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (key == '5') { // this tool calls a function
-    stroke(0, 0, 255);
-    testbox(20, 20, 200);
-    testbox(200, 20, 20);
+  } else if (toolChoice == '3') { // g places the image we pre-loaded
+    image(img3, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 50 + brushSize, 50 + brushSize);
     
- // make testbox do something!
- //   line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '6') {
-
-    stroke(200);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '7') {
-
-    fill(100, 200, 100);
-    rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '8') {
-
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '9') {
-
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 40, 40);
-  } else if (toolChoice == '0') {
-    stroke(0, 0);
-    fill(random(255), random(255), random(255), random(255));
-    rect(mouseX, mouseY, 200, 150);
+  } else if (toolChoice == '4') { // g places the image we pre-loaded
+    image(img4, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 50 + brushSize, 75 + brushSize*2);
+    
+  } else if (toolChoice == '5') { // g places the image we pre-loaded
+    image(img5, mouseX-200-(brushSize/2), mouseY-200-(brushSize/2), 500 + brushSize, 500 + brushSize);
+    
+  } else if (toolChoice == '6') { // g places the image we pre-loaded
+    image(img6, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 50 + brushSize, 50 + brushSize);
+    
+  } else if (toolChoice == '7') { // g places the image we pre-loaded
+    image(img7, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 75 + brushSize*1.5, 50 + brushSize);
+    
+  } else if (toolChoice == '8') { // g places the image we pre-loaded
+    image(img8, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 50 + brushSize, 50 + brushSize);
+    
+  } else if (toolChoice == '9') { // g places the image we pre-loaded
+    image(img9, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 75 + brushSize*1.5, 50 + brushSize);
+    
+  } else if (toolChoice == '0') { // g places the image we pre-loaded
+    image(img10, mouseX-25-(brushSize/2), mouseY-25-(brushSize/2), 200 + brushSize, 100 + brushSize);
+    
   }
  }
  
