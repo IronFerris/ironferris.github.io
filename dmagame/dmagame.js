@@ -38,6 +38,9 @@ function draw() {
   if(gameState == "L3"){
     levelThree();
   }
+  if(gameState == "Win"){
+   winScreen();
+  }
   if(gameState != "Title"){
     text(("Score: " + score), width/2, 40);
     
@@ -50,7 +53,7 @@ function draw() {
     image(img2, followx-25, followy-25, ballSize, ballSize);
     
     var distToEvil = dist(followx, followy, mouseX, mouseY);
-    if(distToEvil < ballSize/2){
+    if(distToEvil < ballSize/1.5){
       score = 0;
       followx = 0;
       followy = 0;
@@ -58,9 +61,9 @@ function draw() {
       bally = random(height-ballSize)+ballSize/2;
       gameState = "Death";    
     }
-   if(gameState == "Death"){
-     deathScreen();
-   }
+   }  
+  if(gameState == "Death"){
+   deathScreen();
   }
   
 } // end of draw ===========================================
@@ -82,6 +85,7 @@ function titleScreen(){
 function levelOne(){
   textFont('Courier New', 30);
   text("Level 1", width/2, height-20);
+  easing = 0.01;
   var distToBall = dist(ballx, bally, mouseX, mouseY);
   if(distToBall < ballSize/2){
     ballx = random(width-ballSize)+ballSize/2;
@@ -99,8 +103,9 @@ function levelOne(){
 } // end of level 1 ========================================
 
 function levelTwo(){
-  background(200, 100, 0);
+  background(200, 200, 200);
   text("Level 2", width/2, height-20);
+  easing = 0.03;
   var distToBall = dist(ballx, bally, mouseX, mouseY);
   if(distToBall < ballSize/2){
     ballx = random(width-ballSize)+ballSize/2;
@@ -108,7 +113,7 @@ function levelTwo(){
     score = score + 1;
   }
   
-  if(score >= 10){
+  if(score >= 15){
     gameState = "L3";
   }
   
@@ -117,18 +122,18 @@ function levelTwo(){
 } // end of level 2 ========================================
 
 function levelThree(){
-  background(0, 100, 200);
+  background(150, 150, 150);
   text("Level 3", width/2, height-20);
+  easing = 0.05;
   var distToBall = dist(ballx, bally, mouseX, mouseY);
   if(distToBall < ballSize/2){
     ballx = random(width-ballSize)+ballSize/2;
     bally = random(height-ballSize)+ballSize/2;
     score = score + 1;
-    ballSize = ballSize - 5;
   }
   
-  if(score >= 15){
-    background(0);
+  if(score >= 25){
+    gameState = "Win";
   }
   
   image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
@@ -137,6 +142,17 @@ function levelThree(){
 
 function deathScreen(){
   background(img2);
+  
+  if (mouseIsPressed === true) {
+    gameState = "L1";
+  }
+}
+
+function winScreen(){
+  background(img);
+  textFont('Courier New', 50);
+  text("You Win!!!", width/2, 250);
+  text("Click anywhere to return to title", width/2, 350);
   
   if (mouseIsPressed === true) {
     gameState = "Title";
